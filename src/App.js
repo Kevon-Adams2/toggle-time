@@ -1,27 +1,42 @@
 import { Component } from 'react';
 import './App.css';
 import EditToggle from './components/EditToggle';
-import Counter from './components/Counter';
+import TextContainer from './components/TextContainer';
+import FamilyChanger from './components/FamilyChanger';
 
 class App extends Component {
   constructor() {
     super()
     this.state = {
-      editStatus: true
-    }
+      fontFamily: "monospace",
+      allowEdit: "true"
+    };
 
-    this.updateEditStatus = this.updateEditStatus.bind(this)
+    this.updateFamily = this.updateFamily.bind(this);
+    this.updateEditStatus = this.updateEditStatus.bind(this);
 
   }
 
+  updateFamily(val) {
+    this.setState({ fontFamily: val });
+  }
+
   updateEditStatus(val) {
-    this.setState({ editStatus: val })
+    this.setState({ allowEdit: val });
   }
 
   render() {
     return (
-      <div className="App">
-        <Counter />
+      <div>
+        <div className="headerBar">
+          <EditToggle update={ this.updateEditStatus} />
+          <FamilyChanger update={this.updateFamily} allowEdit={ this.state.allowEdit }/>
+        </div>
+        <div className="textArea">
+          <TextContainer 
+          fontFamily={ this.state.fontFamily}/>
+        </div>
+        
       </div>
     );
   }

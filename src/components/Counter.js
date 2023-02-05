@@ -5,15 +5,15 @@ class Counter extends Component {
         count: 0
     };
 
-    handleClick = () => {
-        this.setState(({ count }) => ({
-            count: count + 1
-        }));
+    CountUp = () => {
+        this.setState({
+            count: this.state.count + 1
+        });
     };
     
     render() {
         return (
-            <button onClick={this.handleClick}> {this.state.count} </button>
+            <button onClick={ (e) => this.props.CountUp(e.target.value)} disabled={this.props.editStatus === 'false'}> {this.state.count} </button>
         )
     }
 }

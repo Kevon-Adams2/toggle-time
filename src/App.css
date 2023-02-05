@@ -36,3 +36,37 @@
     transform: rotate(360deg);
   }
 }
+
+.headerBar {
+  width: 100%;
+  height: 56px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.textArea {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.textContainer {
+  width: 685px;
+  height: auto;
+  border-radius: 2px;
+  background-color: white;
+  padding: 95px;
+  padding-top: 60px;
+  margin-bottom: 50px;
+}
+
+select {
+  width: 220px;
+  height: 48px;
+  border-radius: 2px;
+  background-color: white;
+  margin-top: 20px;
+  margin-left: 10px;
+  font-size: 16px;
+}
